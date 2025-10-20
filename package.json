@@ -1,18 +1,25 @@
 {
-	"name": "broken-rice-8c63",
+	"name": "remote-mcp-server-authless",
 	"version": "0.0.0",
 	"private": true,
 	"scripts": {
 		"deploy": "wrangler deploy",
 		"dev": "wrangler dev",
+		"format": "biome format --write",
+		"lint:fix": "biome lint --fix",
 		"start": "wrangler dev",
-		"test": "vitest",
-		"cf-typegen": "wrangler types"
+		"cf-typegen": "wrangler types",
+		"type-check": "tsc --noEmit"
+	},
+	"dependencies": {
+		"@modelcontextprotocol/sdk": "1.19.1",
+		"agents": "^0.2.8",
+		"zod": "^3.25.76"
 	},
 	"devDependencies": {
-		"@cloudflare/vitest-pool-workers": "^0.8.19",
-		"typescript": "^5.5.2",
-		"vitest": "~3.2.0",
+		"@biomejs/biome": "^2.2.5",
+		"@types/node": "^24.9.0",
+		"typescript": "5.9.3",
 		"wrangler": "^4.43.0"
 	}
 }
